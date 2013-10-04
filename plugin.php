@@ -45,6 +45,7 @@ class AJAXNHSJobsSearch {
 		
 		// Setup the event handler for marking this post as read for the current user
 		add_action( 'wp_ajax_refresh_job_search', array( &$this, 'refresh_job_search' ) );
+		add_action('wp_ajax_nopriv_refresh_job_search', array(&$this,'refresh_job_search'));
 		
 		// Setup the filter for rendering the checkbox
 		//add_filter( 'the_content', array( &$this, 'add_checkbox' ) );
