@@ -9,7 +9,11 @@ var timeoutReference;
 	$(function () {			
 			// We use the change attribute so that the event handler fires
 			// whenever the checkbox or its associated label is clicked.
+			if($(".visible-phone").css("display") != "none"){
+				$("#keywordSearchSubmit").hide();
+			}
 			
+			$("#paySubmit").hide();
 			
 			$('#keywordSearch').keypress(function() {
 				var el = this; // copy of this object for further usage

@@ -74,8 +74,8 @@ class AJAXNHSJobsSearch {
 	 */
 	public function register_plugin_styles() {
 	
-		wp_register_style( 'ajaxnhsjobssearch', plugins_url( 'ajaxnhsjobssearch/css/plugin.css' ) );
-		wp_enqueue_style( 'ajaxnhsjobssearch' );
+		wp_register_style( 'ajaxnhsjobs', plugins_url( 'ajaxnhsjobs/css/plugin.css' ) );
+		wp_enqueue_style( 'ajaxnhsjobs' );
 	
 	} // end register_plugin_styles
 	
@@ -84,8 +84,8 @@ class AJAXNHSJobsSearch {
 	 */
 	public function register_plugin_scripts() {
 	
-		wp_register_script( 'ajaxnhsjobssearch', plugins_url( 'ajaxnhsjobssearch/js/plugin.js' ), array( 'jquery' ) );
-		wp_enqueue_script( 'ajaxnhsjobssearch' );
+		wp_register_script( 'ajaxnhsjobs', plugins_url( 'ajaxnhsjobs/js/plugin.js' ), array( 'jquery' ) );
+		wp_enqueue_script( 'ajaxnhsjobs' );
 	
 	} // end register_plugin_scripts
 	
