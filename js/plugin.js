@@ -11,6 +11,8 @@ var timeoutReference;
 			// whenever the checkbox or its associated label is clicked.
 			if($(".visible-phone").css("display") != "none"){
 				$("#keywordSearchSubmit").hide();
+				$(".jobDesc").css("height", "36px");
+				$(".jobDesc").css("overflow", "hidden");
 			}
 			
 			$("#paySubmit").hide();
@@ -103,6 +105,13 @@ var timeoutReference;
 				$("#newSubmit").html("Show posts suitable for newly qualified staff");
 				sendAndProcess();
 			});
+			
+			$(".jobDesc").click(function(e){
+				if($(this).css("height") != "auto"){
+					$(this).css("height", "auto");
+					$(this).css("border-bottom-width", "0px");
+				}
+			});
 	});
 	
 	function sendAndProcess(){
@@ -126,13 +135,13 @@ var timeoutReference;
 					//build the html to return	
 					htmlToWrite += "<div class=\"row job\">";
 					htmlToWrite += "<h3><a href=\"" + val.url + "\">" + val.title + "</a></h3>";
-					htmlToWrite += "<p>" + val.desc + "</p>";
+					htmlToWrite += "<p class=\"jobDesc\">" + val.desc + "</p>";
 					htmlToWrite += "<dl class=\"dl-horizontal\">";
 					htmlToWrite += "<dt>Job Type</dt><dd>" + val.type + "</dd>";
 					htmlToWrite += "<dt>Salary</dt><dd>" + val.salary + "</dd>";
 					htmlToWrite += "<dt>Close date</dt><dd>" + val.close + "</dd>";
 					htmlToWrite += "</dl>";
-					htmlToWrite += "<p><a href=\"" + val.url + "\" class=\"btn btn-info pull-right\">Apply now</a></p>";
+					htmlToWrite += "<p class=\"applyButton\"><a href=\"" + val.url + "\" class=\"btn btn-info pull-right\">Apply now</a></p>";
 					htmlToWrite += "</div>";
 				});
 				
