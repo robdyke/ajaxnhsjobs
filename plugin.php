@@ -38,7 +38,6 @@ class AJAXNHSJobsSearch {
 	function __construct() {
 	
 		// Register site styles and scripts
-		add_action( 'wp_enqueue_scripts', array( &$this, 'register_plugin_styles' ) );
 		add_action( 'wp_enqueue_scripts', array( &$this, 'register_plugin_scripts' ) );
 		
 		// Include the Ajax library on the front end
@@ -69,16 +68,6 @@ class AJAXNHSJobsSearch {
 		
 	} // end add_ajax_library
 
-	/**
-	 * Registers and enqueues plugin-specific styles.
-	 */
-	public function register_plugin_styles() {
-	
-		wp_register_style( 'ajaxnhsjobs', plugins_url( 'ajaxnhsjobs/css/plugin.css' ) );
-		wp_enqueue_style( 'ajaxnhsjobs' );
-	
-	} // end register_plugin_styles
-	
 	/**
 	 * Registers and enqueues plugin-specific scripts.
 	 */
