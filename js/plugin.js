@@ -116,7 +116,6 @@ var timeoutReference;
 	
 	function sendAndProcess(){
 		// Initial the request to mark this this particular post as read
-		console.log("keyword:"+keywordVal+" type:"+typeVal+" sort:"+sortVal+" pay:"+payVal+" newq:"+newQVal);
 		$.post(ajaxurl, {
 			action: 'refresh_job_search',
 			keyword: keywordVal,
@@ -126,7 +125,6 @@ var timeoutReference;
 			newq: newQVal
 		}, function (data) {
 			var respJSON = $.parseJSON(data);
-			console.log(respJSON.status);
 			
 			if(respJSON.status != "error"){
 				var htmlToWrite = "";
